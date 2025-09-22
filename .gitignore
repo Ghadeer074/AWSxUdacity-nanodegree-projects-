@@ -1,0 +1,8 @@
+# Ignore virtual environments and dependencies
+myenv/
+*.pyc
+__pycache__/
+*.log
+.env
+.settengs.json
+.vscode/
