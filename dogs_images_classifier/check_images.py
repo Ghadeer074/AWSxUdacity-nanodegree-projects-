@@ -63,7 +63,7 @@ def main():
 
     # Function that checks Pet Images in the results Dictionary using results    
     check_creating_pet_image_labels(results)
-
+    sleep(75)
    
     # TODO 3: Define classify_images function within the file classiy_images.py
     # Once the classify_images function has been defined replace first 'None' 
@@ -78,7 +78,7 @@ def main():
     # Function that checks Results Dictionary using results    
     check_classifying_images(results)    
 
-    
+    sleep(75)
     # TODO 4: Define adjust_results4_isadog function within the file adjust_results4_isadog.py
     # Once the adjust_results4_isadog function has been defined replace 'None' 
     # in the function call with in_arg.dogfile  Once you have done the 
@@ -92,7 +92,7 @@ def main():
     # Function that checks Results Dictionary for is-a-dog adjustment using results
     check_classifying_labels_as_dogs(results)
 
-
+    sleep(75)
     # TODO 5: Define calculates_results_stats function within the file calculates_results_stats.py
     # This function creates the results statistics dictionary that contains a
     # summary of the results statistics (this includes counts & percentages). This
@@ -104,7 +104,7 @@ def main():
     # Function that checks Results Statistics Dictionary using results_stats
     check_calculating_results(results, results_stats)
 
-
+    sleep(75)
     # TODO 6: Define print_results function within the file print_results.py
     # Once the print_results function has been defined replace 'None' 
     # in the function call with in_arg.arch  Once you have done the 
@@ -116,7 +116,7 @@ def main():
     
     # TODO 0: Measure total program runtime by collecting end time
     end_time = time()
-    sleep(90)
+    
     # TODO 0: Computes overall runtime in seconds & prints it in hh:mm:ss format
     tot_time = end_time - start_time #calculate difference between end time and start time
     print("\n** Total Elapsed Runtime:",

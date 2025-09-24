@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:
-# REVISED DATE: 
+# PROGRAMMER: Ghadeer Fallatah
+# DATE CREATED: 2025-09-20
+# REVISED DATE: 2025-09-24
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
 #          should also allow the user to be able to print out cases of misclassified
@@ -61,6 +61,35 @@ def print_results(results_dic, results_stats_dic, model,
                               False doesn't print anything(default) (bool) 
     Returns:
            None - simply printing results.
-    """    
-    None
+    """ 
+    print("\n\n Results for CNN Model Architecture",model.upper())
+
+    #counts
+    print("Number of Images", results_stats_dic['n_images'])
+    print("Number of Dogs Images", results_stats_dic['n_dog_img'])
+    print("Number of not a dogs Images", results_stats_dic['n_notdogs_img']) 
+
+    #percentages 
+    print("Percentage of correct dog classification: ", results_stats_dic['pct_correct_dogs'])
+    print("Percentage of correct breed classification: ", results_stats_dic['pct_correct_breed']) 
+    print("Percentage of correct not a dog classification: ", results_stats_dic['pct_correct_notdogs'])
+    print("Percentage of correct matches: ", results_stats_dic['pct_match'])
+  
+     #Print misclassified dogs if requested
+    if print_incorrect_dogs and (
+       (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs']) != results_stats_dic['n_images'] ):
+        print("\n Misclassified Dogs:")
+        for filename, val in results_dic.items():
+            if val[3] != val[4]:
+                print(f"File: {filename} Pet Label: {val[0]}  Classifier Label: {val[1]}")
+
+     #Print misclassified breeds if requested
+    if print_incorrect_breed and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
+        print("\nMisclassified Dog Breed:")
+        for filename, val in results_dic.items():
+            # Pet is a dog, classifier says dog, but breeds don't match
+            if val[3] == 1 and val[4] == 1 and val[2] == 0:
+                print(f"File: {filename} | Pet label: {val[0]} | Classifier label: {val[1]}")
+
+    
                 
