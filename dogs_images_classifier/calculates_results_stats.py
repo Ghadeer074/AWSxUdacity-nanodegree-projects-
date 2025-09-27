@@ -73,7 +73,7 @@ def calculates_results_stats(results_dic):
     #  
     # Calculating counts of matches 
     n_images= len(results_dic)
-    n_dog_img =0
+    n_dogs_img =0
     n_notdogs_img = 0
     n_match = 0
     n_correct_dogs = 0
@@ -89,7 +89,7 @@ def calculates_results_stats(results_dic):
     for _, val in results_dic.items():
         # number of dog images
         if val[3] == 1:
-            n_dog_img += 1
+            n_dogs_img += 1
 
             # number of correctly classified dog images
             if val[4] == 1:
@@ -110,13 +110,13 @@ def calculates_results_stats(results_dic):
 
     # Calculating percentages of matches
     pct_match = (n_match / n_images) * 100 if n_images > 0 else 0
-    pct_correct_dogs = (n_correct_dogs / n_dog_img) * 100 if n_dog_img > 0 else 0
-    pct_correct_breed = (n_correct_breed / n_dog_img) * 100 if n_dog_img > 0 else 0
+    pct_correct_dogs = (n_correct_dogs / n_dogs_img) * 100 if n_dogs_img > 0 else 0
+    pct_correct_breed = (n_correct_breed / n_dogs_img) * 100 if n_dogs_img > 0 else 0
     pct_correct_notdogs = (n_correct_notdogs / n_notdogs_img) * 100  if n_notdogs_img > 0 else 0  
 
     results_stats_dic = {
     'n_images': n_images,
-    'n_dog_img': n_dog_img,
+    'n_dogs_img': n_dogs_img,
     'n_notdogs_img': n_notdogs_img,
     'n_match': n_match,
     'n_correct_dogs': n_correct_dogs,

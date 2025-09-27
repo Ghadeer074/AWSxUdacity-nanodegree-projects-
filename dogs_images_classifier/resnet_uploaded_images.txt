@@ -1,6 +1,6 @@
 Command Line Arguments:
      dir = uploaded_images\ 
-    arch = alexnet 
+    arch = resnet 
  dogfile = dognames.txt
 
 Pet Image Label Dictionary has 4 key-value pairs.
@@ -12,27 +12,23 @@ Below are 4 of them:
 
      MATCH:
 
-               Backpack_01.jpg: 
-Real:                   backpack   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack
-
                     Dog_01.jpg: 
 Real:                        dog   Classifier:              eskimo dog, husky
 
  NOT A MATCH:
 
+               Backpack_01.jpg: 
+Real:                   backpack   Classifier:               bulletproof vest
+
                     Dog_02.jpg: 
-Real:                        dog   Classifier:                 siberian husky
+Real:                        dog   Classifier:       kit fox, vulpes macrotis
 
               Song_Bird_01.jpg: 
-Real:                  song bird   Classifier:                         bulbul
+Real:                  song bird   Classifier: goldfinch, carduelis carduelis
 
-# Total Images 4 # Matches: 2 # NOT Matches: 2
+# Total Images 4 # Matches: 1 # NOT Matches: 3
 
      MATCH:
-
-               Backpack_01.jpg: 
-Real:                   backpack   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack  
-PetLabelDog: 0  ClassLabelDog: 0
 
                     Dog_01.jpg: 
 Real:                        dog   Classifier:              eskimo dog, husky  
@@ -40,38 +36,40 @@ PetLabelDog: 1  ClassLabelDog: 0
 
  NOT A MATCH:
 
-                    Dog_02.jpg: 
-Real:                        dog   Classifier:                 siberian husky  
-PetLabelDog: 1  ClassLabelDog: 1
-
-              Song_Bird_01.jpg: 
-Real:                  song bird   Classifier:                         bulbul  
+               Backpack_01.jpg: 
+Real:                   backpack   Classifier:               bulletproof vest  
 PetLabelDog: 0  ClassLabelDog: 0
 
-# Total Images 4 # Matches: 2 # NOT Matches: 2
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:       kit fox, vulpes macrotis  
+PetLabelDog: 1  ClassLabelDog: 0
+
+              Song_Bird_01.jpg: 
+Real:                  song bird   Classifier: goldfinch, carduelis carduelis  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
 
  ** Statistics from calculates_results_stats() function:
 N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog:  50.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+Pct Corr dog:   0.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
  ** Check Statistics - calculated from this function as a check:
 N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog:  50.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+Pct Corr dog:   0.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
 
- Results for CNN Model Architecture ALEXNET
+ Results for CNN Model Architecture RESNET
 Number of Images 4
 Number of Dogs Images 2
 Number of not a dogs Images 2
-Percentage of correct dog classification:  50.0
+Percentage of correct dog classification:  0.0
 Percentage of correct breed classification:  0.0
 Percentage of correct not a dog classification:  100.0
-Percentage of correct matches:  50.0
+Percentage of correct matches:  25.0
 
  Misclassified Dogs:
 File: Dog_01.jpg Pet Label: dog  Classifier Label: eskimo dog, husky
-
-Misclassified Dog Breed:
-File: Dog_02.jpg | Pet label: dog | Classifier label: siberian husky
+File: Dog_02.jpg Pet Label: dog  Classifier Label: kit fox, vulpes macrotis
 
 ** Total Elapsed Runtime: 0:0:0

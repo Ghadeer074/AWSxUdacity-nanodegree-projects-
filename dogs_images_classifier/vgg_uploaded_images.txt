@@ -1,6 +1,6 @@
 Command Line Arguments:
      dir = uploaded_images\ 
-    arch = alexnet 
+    arch = vgg 
  dogfile = dognames.txt
 
 Pet Image Label Dictionary has 4 key-value pairs.
@@ -59,7 +59,7 @@ N Images:  4  N Dog Images:  2  N NotDog Images:  2
 Pct Corr dog:  50.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
 
- Results for CNN Model Architecture ALEXNET
+ Results for CNN Model Architecture VGG
 Number of Images 4
 Number of Dogs Images 2
 Number of not a dogs Images 2

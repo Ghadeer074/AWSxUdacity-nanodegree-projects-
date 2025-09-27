@@ -66,7 +66,7 @@ def print_results(results_dic, results_stats_dic, model,
 
     #counts
     print("Number of Images", results_stats_dic['n_images'])
-    print("Number of Dogs Images", results_stats_dic['n_dog_img'])
+    print("Number of Dogs Images", results_stats_dic['n_dogs_img'])
     print("Number of not a dogs Images", results_stats_dic['n_notdogs_img']) 
 
     #percentages 
