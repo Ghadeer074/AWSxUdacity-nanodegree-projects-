@@ -317,5 +317,16 @@ N Images: 40  N Dog Images: 30  N NotDog Images: 10
 Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  80.0
 
 
- Results for CNN Model Architecture ALEXNET
-Number of Images 40
+*** Results Summary for CNN Model Architecture ALEXNET ***
+N Images : 40 N Dog Images : 30 N Not-Dog Images : 10
+pct_match : 75.0 pct_correct_dogs : 100.0 pct_correct_breed : 80.0 pct_correct_notdogs : 100.0
+
+INCORRECT Dog Breed Assignment:
+File: Beagle_01141.jpg | Pet label: beagle | Classifier label: english foxhound
+File: Beagle_01170.jpg | Pet label: beagle | Classifier label: walker hound, walker foxhound
+File: Boston_terrier_02285.jpg | Pet label: boston terrier | Classifier label: basenji
+File: Golden_retriever_05182.jpg | Pet label: golden retriever | Classifier label: tibetan mastiff
+File: Golden_retriever_05257.jpg | Pet label: golden retriever | Classifier label: afghan hound, afghan
+File: Great_pyrenees_05367.jpg | Pet label: great pyrenees | Classifier label: kuvasz
+
+** Total Elapsed Runtime: 0:0:0

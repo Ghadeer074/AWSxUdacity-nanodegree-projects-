@@ -62,30 +62,39 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """ 
-    print("\n\n Results for CNN Model Architecture",model.upper())
-
+    print("\n\n*** Results Summary for CNN Model Architecture",model.upper(), 
+          "***")
     #counts
-    print("Number of Images", results_stats_dic['n_images'])
-    print("Number of Dogs Images", results_stats_dic['n_dogs_img'])
-    print("Number of not a dogs Images", results_stats_dic['n_notdogs_img']) 
 
+    print("N Images : {} N Dog Images : {} N Not-Dog Images : {}".format(
+        results_stats_dic['n_images'],
+        results_stats_dic['n_dogs_img'],
+        results_stats_dic['n_notdogs_img'])
+    )
+
+
+    
     #percentages 
-    print("Percentage of correct dog classification: ", results_stats_dic['pct_correct_dogs'])
-    print("Percentage of correct breed classification: ", results_stats_dic['pct_correct_breed']) 
-    print("Percentage of correct not a dog classification: ", results_stats_dic['pct_correct_notdogs'])
-    print("Percentage of correct matches: ", results_stats_dic['pct_match'])
-  
+    
+    print("pct_match : {:.1f} pct_correct_dogs : {:.1f} pct_correct_breed : {:.1f} pct_correct_notdogs : {:.1f}".format(
+        results_stats_dic['pct_match'],
+        results_stats_dic['pct_correct_dogs'],
+        results_stats_dic['pct_correct_breed'],
+        results_stats_dic['pct_correct_notdogs'])
+    )
+
+
      #Print misclassified dogs if requested
     if print_incorrect_dogs and (
        (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs']) != results_stats_dic['n_images'] ):
-        print("\n Misclassified Dogs:")
+        print("\nINCORRECT Dog/NOT Dog Assignments:")
         for filename, val in results_dic.items():
             if val[3] != val[4]:
                 print(f"File: {filename} Pet Label: {val[0]}  Classifier Label: {val[1]}")
 
      #Print misclassified breeds if requested
     if print_incorrect_breed and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
-        print("\nMisclassified Dog Breed:")
+        print("\nINCORRECT Dog Breed Assignment:")
         for filename, val in results_dic.items():
             # Pet is a dog, classifier says dog, but breeds don't match
             if val[3] == 1 and val[4] == 1 and val[2] == 0:
