@@ -1,4 +1,4 @@
-# AWS AI & ML Scholarship – Udacity AI Programming Nanodegree Projects
+# AWS AI & ML – Udacity AI Programming Nanodegree Projects
 
 Projects I completed in the **AWS AI & ML Scholarship Program with Udacity** (Future AWS AI Scientist track, 2025). They cover deep learning with **PyTorch**, from using pretrained CNNs for image classification to building a Transformer from scratch for NLP.
 
